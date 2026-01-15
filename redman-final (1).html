@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redman Systems | Revenue Automation for Service Businesses</title>
+    <meta name="description" content="Custom automation systems that capture leads, streamline operations, and increase revenue for service businesses.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1e40af;
+            --black: #111;
+            --white: #fff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-900: #111827;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ========================================
+           HEADER
+           ======================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            letter-spacing: -0.01em;
+        }
+
+        .header-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .header-cta:hover {
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+
+        /* ========================================
+           HERO
+           ======================================== */
+        .hero {
+            padding: 9rem 0 5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .hero-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ========================================
+           PRICING
+           ======================================== */
+        .pricing {
+            padding: 4rem 0 6rem;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-header h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-header p {
+            color: var(--gray-600);
+            font-size: 1rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.12);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+        }
+
+        .pricing-tier {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gray-500);
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .pricing-price {
+            margin-bottom: 1.75rem;
+        }
+
+        .pricing-amount {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            line-height: 1;
+        }
+
+        .pricing-period {
+            font-size: 1rem;
+            color: var(--gray-500);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.925rem;
+            color: var(--gray-700);
+            padding: 0.5rem 0;
+        }
+
+        .pricing-features li svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--primary);
+            stroke-width: 2;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.9rem 1rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .pricing-card:not(.featured) .pricing-cta {
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .pricing-card:not(.featured) .pricing-cta:hover {
+            background: var(--black);
+        }
+
+        .pricing-card.featured .pricing-cta {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .pricing-card.featured .pricing-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ========================================
+           BOTTOM CTA
+           ======================================== */
+        .bottom-cta {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .bottom-cta h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .bottom-cta p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+
+        .bottom-cta a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .bottom-cta a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            padding: 2rem 0;
+            border-top: 1px solid var(--gray-200);
+            text-align: center;
+        }
+
+        .footer-content {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        .footer-content a {
+            color: var(--gray-700);
+        }
+
+        .footer-content a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">Redman Systems</a>
+                <a href="#pricing" class="header-cta">View Pricing</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Automated Systems That Capture Leads and Book Jobs</h1>
+            <p>Websites, automations, and CRM systems for service businesses. More customers, less work.</p>
+            <a href="#pricing" class="hero-cta">See Plans</a>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>Two Plans. Zero Complexity.</h2>
+                <p>Choose what fits your business.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- GROWTH -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-tier">Growth</div>
+                    <h3>Full System</h3>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">$297</span>
+                        <span class="pricing-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            High-converting booking website
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            LeadRecapture™ — recover missed calls instantly
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Abandoned lead follow-up sequences
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            No-show prevention system
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            5-Star Review Engine™
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Past customer reactivation campaigns
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Done-for-you CRM setup
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Unlimited local SEO pages
+                        </li>
+                    </ul>
+                    <a href="mailto:ray@redmansystems.com" class="pricing-cta">Get Started</a>
+                </div>
+
+                <!-- SCALE -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">Scale</div>
+                    <h3>Custom Solutions</h3>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">$1,997</span>
+                        <span class="pricing-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Everything in Growth
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Custom automation builds
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Priority support
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Quarterly strategy sessions
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Advanced reporting
+                        </li>
+                        <li>
+                            <svg fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Multi-location support
+                        </li>
+                    </ul>
+                    <a href="mailto:ray@redmansystems.com" class="pricing-cta">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="bottom-cta">
+        <div class="container">
+            <h2>Questions?</h2>
+            <p>Email us at <a href="mailto:ray@redmansystems.com">ray@redmansystems.com</a></p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                &copy; 2026 Redman Systems. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
