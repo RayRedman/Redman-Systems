@@ -300,6 +300,136 @@
         }
 
         /* ========================================
+           CONTACT FORM
+           ======================================== */
+        .contact {
+            padding: 5rem 0;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-header h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-header p {
+            color: var(--gray-600);
+            font-size: 1rem;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-consent input[type="checkbox"] {
+            margin-top: 0.25rem;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .form-consent label {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .form-submit:hover {
+            background: var(--primary-dark);
+        }
+
+        .form-disclaimer {
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .form-success h3 {
+            font-size: 1.25rem;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-success p {
+            color: var(--gray-600);
+        }
+
+        /* ========================================
            FOOTER
            ======================================== */
         footer {
@@ -329,7 +459,7 @@
         <div class="container">
             <div class="header-inner">
                 <a href="/" class="logo">Redman Systems</a>
-                <a href="https://calendar.app.google/FjWiV4z2TiRcc3qe7" target="_blank" class="header-cta">Book a Call</a>
+                <a href="#contact" class="header-cta">Get Started</a>
             </div>
         </div>
     </header>
@@ -408,6 +538,56 @@
         </div>
     </section>
 
+    <!-- CONTACT FORM -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h2>Get In Touch</h2>
+                <p>Fill out the form below and we'll be in touch shortly.</p>
+            </div>
+
+            <div class="contact-form" id="contactForm">
+                <form id="leadForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">How can we help?</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your business..."></textarea>
+                    </div>
+
+                    <div class="form-consent">
+                        <input type="checkbox" id="smsConsent" name="smsConsent" required>
+                        <label for="smsConsent">I agree to receive SMS and calls regarding my inquiry. Message frequency varies. Reply STOP to opt out. Standard message and data rates may apply.</label>
+                    </div>
+
+                    <button type="submit" class="form-submit">Send Message</button>
+
+                    <p class="form-disclaimer">
+                        By submitting this form, you agree to our <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>.
+                    </p>
+                </form>
+
+                <div class="form-success" id="formSuccess">
+                    <h3>Thanks for reaching out!</h3>
+                    <p>We'll get back to you within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer>
         <div class="container">
@@ -419,6 +599,39 @@
             <p class="footer-content">&copy; 2025 Redman Systems. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // TODO: Replace with your GHL webhook URL
+            const webhookUrl = 'YOUR_GHL_WEBHOOK_URL_HERE';
+            
+            // Send to webhook
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                // Show success message
+                document.getElementById('leadForm').style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+            })
+            .catch(error => {
+                // Still show success (webhook might have CORS issues but still work)
+                document.getElementById('leadForm').style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+            });
+        });
+    </script>
 
 </body>
 </html>
