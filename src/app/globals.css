@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: #fffbf7;
+  --color-cream-dark: #fff7f0;
+  --color-surface: #ffffff;
+  --color-surface-dark: #0a0a0a;
+  --color-border: #e8e0d8;
+  --color-border-dark: #d4c8bc;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #7a7a7a;
+  --color-primary: #e85a24;
+  --color-primary-dark: #d14a18;
+  --color-primary-light: #fff0ea;
+  --color-navy: #0f1c3f;
+  --color-navy-light: #1a2d5a;
+  --color-success: #2d8a4e;
+  --color-dark: #0b0b0f;
+  --color-dark-card: #131318;
+  --color-dark-border: #1e1e26;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-text);
+}
+
+::selection {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+/* Hero gradient mesh background */
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232, 90, 36, 0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 80% 20%, rgba(232, 90, 36, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 40% at 20% 60%, rgba(232, 90, 36, 0.05) 0%, transparent 50%),
+              var(--color-dark);
+}
+
+/* Subtle dot grid pattern */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Glow effect behind CTA */
+.glow-primary {
+  box-shadow: 0 0 40px rgba(232, 90, 36, 0.35), 0 0 80px rgba(232, 90, 36, 0.15);
+}
+
+.glow-primary-sm {
+  box-shadow: 0 0 20px rgba(232, 90, 36, 0.25), 0 0 40px rgba(232, 90, 36, 0.1);
+}
+
+/* Section alternating backgrounds */
+.section-elevated {
+  background: var(--color-cream-dark);
+}
+
+.section-dark {
+  background: var(--color-dark);
+  color: #ffffff;
+}
+
+/* Timeline connector line */
+.timeline-connector {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
