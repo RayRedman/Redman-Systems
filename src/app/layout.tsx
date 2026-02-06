@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Redman Systems | Revenue Growth for Home Service Businesses",
     description:
-      "Join 500+ contractors who've doubled their revenue — without working more hours.",
+      "Automated systems that capture leads, book more jobs, and grow revenue for plumbing, HVAC, and home service businesses.",
     type: "website",
   },
 };

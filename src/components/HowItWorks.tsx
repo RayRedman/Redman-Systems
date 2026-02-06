@@ -4,26 +4,26 @@ const steps = [
   {
     number: "01",
     icon: PhoneCall,
-    title: "Strategy Call",
-    desc: "30 minutes. We learn your business and where you&apos;re losing leads.",
+    title: "Quick Call",
+    desc: "30 minutes. Tell us what you do, where you work, and what a full week looks like for you.",
   },
   {
     number: "02",
     icon: Wrench,
     title: "We Build It",
-    desc: "Website, automations, CRM — configured for your business in 7 days.",
+    desc: "Website, automations, CRM — all set up for your business. You approve before anything goes live.",
   },
   {
     number: "03",
     icon: Rocket,
     title: "Go Live",
-    desc: "System starts capturing leads immediately. You review before launch.",
+    desc: "Your system starts working immediately. Missed calls get caught, leads get followed up, reminders go out.",
   },
   {
     number: "04",
     icon: TrendingUp,
-    title: "Grow",
-    desc: "We monitor, optimize, and support you ongoing. You focus on jobs.",
+    title: "Keep Growing",
+    desc: "We keep an eye on everything and optimize it. You just keep doing the work you're good at.",
   },
 ];
 
@@ -36,17 +36,16 @@ export default function HowItWorks() {
             How It Works
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text mt-3 mb-4 tracking-tight">
-            Live in 7 days. Runs without you.
+            Up and running in about a week.
           </h2>
           <p className="text-lg text-text-secondary">
-            We handle the setup. You handle the jobs.
+            No homework for you. We handle the setup, you keep running jobs.
           </p>
         </div>
 
         {/* Desktop: horizontal timeline */}
         <div className="hidden md:block">
           <div className="grid grid-cols-4 gap-6 relative">
-            {/* Connector line */}
             <div className="absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-border" />
             <div
               className="absolute top-8 left-[12.5%] h-0.5 timeline-connector"

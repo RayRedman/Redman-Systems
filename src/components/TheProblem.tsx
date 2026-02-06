@@ -10,33 +10,33 @@ import {
 const leaks = [
   {
     icon: PhoneOff,
-    title: "Missed calls",
-    desc: "Customer calls, nobody picks up. They call your competitor instead.",
+    title: "Missed calls while you're on a job",
+    desc: "You're elbow-deep in a water heater. Phone rings. By the time you check, they already called somebody else.",
   },
   {
     icon: Clock,
-    title: "Slow follow-up",
-    desc: "Lead comes in at 9pm. You call back at 9am. They already booked someone else.",
+    title: "Leads sitting in your voicemail",
+    desc: "Someone fills out your form at 9pm. You see it at 7am. They booked the guy who texted back at 9:01.",
   },
   {
     icon: CalendarX,
-    title: "No-shows",
-    desc: "No reminder goes out. Customer forgets. You waste a time slot and a drive.",
+    title: "No-shows killing your schedule",
+    desc: "You drive 30 minutes to a job. Nobody home. No reminder went out. That's a wasted slot you can't get back.",
   },
   {
     icon: StarOff,
-    title: "No reviews",
-    desc: "Happy customers never get asked. Your competitor has 200 reviews. You have 12.",
+    title: "Great work, no reviews to show for it",
+    desc: "Your customers are happy. But nobody asks them to leave a review, so they don't. Meanwhile the other guy has 200.",
   },
   {
     icon: UserX,
-    title: "Dead past customers",
-    desc: "Hundreds of past jobs. Nobody reaches out. They Google it fresh and find someone else.",
+    title: "Past customers forgetting about you",
+    desc: "You've done hundreds of jobs. Those people need service again. But you never reach out, so they Google it fresh.",
   },
   {
     icon: AlertTriangle,
-    title: "No system",
-    desc: "Five apps, no process. Leads fall through the cracks every single week.",
+    title: "Checking five apps, losing track",
+    desc: "Texts in one place, calls in another, leads in a third. Things slip through the cracks every week.",
   },
 ];
 
@@ -46,10 +46,10 @@ export default function TheProblem() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-sm font-semibold text-primary uppercase tracking-widest">
-            The Problem
+            Sound Familiar?
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text mt-3 mb-4 tracking-tight">
-            You&apos;re bleeding money and don&apos;t even know it
+            You&apos;re good at the work. The phone stuff is what&apos;s costing you.
           </h2>
         </div>
 
@@ -79,12 +79,11 @@ export default function TheProblem() {
 
         {/* Money lost callout */}
         <div className="bg-dark rounded-2xl p-8 text-center">
-          <p className="text-3xl sm:text-4xl font-serif font-bold text-white mb-2">
-            $2,000+<span className="text-primary">/mo</span>
+          <p className="text-2xl sm:text-3xl font-serif font-bold text-white mb-2">
+            One missed call = one lost job.
           </p>
-          <p className="text-white/60 text-base max-w-md mx-auto">
-            The average home service business loses this much to missed calls alone.
-            That&apos;s $24,000 a year walking out the door.
+          <p className="text-white/60 text-base max-w-lg mx-auto">
+            If that&apos;s a $300 drain clearing or a $5,000 HVAC install, it adds up fast. Most guys don&apos;t realize how much is slipping through until they see the numbers.
           </p>
         </div>
       </div>

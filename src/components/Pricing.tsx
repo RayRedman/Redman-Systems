@@ -4,11 +4,11 @@ const BOOKING_URL = "#calendly-placeholder";
 
 const features = [
   "Missed call text-back (60-second response)",
-  "Automated lead follow-up sequences",
-  "Appointment reminders (cut no-shows 40%+)",
-  "Review request automation",
+  "Automated lead follow-up",
+  "Appointment reminders",
+  "Automated review requests",
   "CRM with unified inbox",
-  "High-converting booking website",
+  "Custom booking website",
   "Unlimited service area pages",
   "Ongoing support + optimization",
 ];
@@ -27,13 +27,13 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-sm font-semibold text-primary uppercase tracking-widest">
-            Simple Pricing
+            Pricing
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text mt-3 mb-4 tracking-tight">
-            One plan. Everything included.
+            Less than one job pays for it.
           </h2>
           <p className="text-lg text-text-secondary">
-            No setup fees. No contracts. One recovered job pays for 3 months.
+            No setup fees. No contracts. Cancel anytime.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function Pricing() {
                 <span className="text-lg text-text-muted">/month</span>
               </div>
               <p className="text-text-secondary mb-6 pb-6 border-b border-border">
-                The complete system for booked-solid growth
+                The whole system, built and managed for you
               </p>
 
               <ul className="space-y-3 mb-8">
@@ -69,7 +69,7 @@ export default function Pricing() {
                 href={BOOKING_URL}
                 className="flex items-center justify-center gap-2 w-full bg-primary text-white py-3.5 rounded-xl font-semibold text-base hover:bg-primary-dark transition-all hover:-translate-y-0.5 glow-primary-sm"
               >
-                Book Your Strategy Call
+                Book a Free Call
                 <ArrowRight size={18} />
               </a>
 
@@ -80,11 +80,11 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* ROI comparison */}
+        {/* Cost comparison */}
         <div className="max-w-2xl mx-auto bg-surface border border-border rounded-2xl overflow-hidden">
           <div className="p-6 border-b border-border">
             <h3 className="font-serif text-xl font-bold text-text text-center">
-              What you&apos;d pay elsewhere vs. what you pay us
+              What this stuff costs if you piece it together yourself
             </h3>
           </div>
           <div className="divide-y divide-border">

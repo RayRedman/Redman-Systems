@@ -1,37 +1,8 @@
 "use client";
 
-import { ArrowRight, Clock, Users, DollarSign } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowRight, Phone, Wrench, DollarSign } from "lucide-react";
 
 const BOOKING_URL = "#calendly-placeholder";
-
-function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const duration = 2000;
-    const steps = 60;
-    const increment = target / steps;
-    let current = 0;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, duration / steps);
-    return () => clearInterval(timer);
-  }, [target]);
-
-  return (
-    <span>
-      {count}
-      {suffix}
-    </span>
-  );
-}
 
 export default function Hero() {
   return (
@@ -39,12 +10,12 @@ export default function Hero() {
       <div className="relative pt-32 pb-20 lg:pt-44 lg:pb-32">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white mb-6">
-            Stop Losing Jobs.{" "}
-            <span className="text-primary">Start Filling Your Calendar.</span>
+            You&apos;re On the Job.{" "}
+            <span className="text-primary">Who&apos;s Answering Your Phone?</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Automated lead capture, follow-up, and booking systems built for home service businesses. More calls answered. More jobs booked. More revenue.
+            Every missed call is a job going to the next guy on Google. We make sure that doesn&apos;t happen — so you can focus on the work in front of you.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
@@ -52,7 +23,7 @@ export default function Hero() {
               href={BOOKING_URL}
               className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-base font-semibold hover:bg-primary-dark transition-all hover:-translate-y-0.5 glow-primary"
             >
-              Book a Free Strategy Call
+              Book a Free Call
               <ArrowRight size={18} />
             </a>
             <a
@@ -63,33 +34,27 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Trust strip */}
+          {/* Value props — things we can actually promise */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
-              <Clock size={20} className="text-primary flex-shrink-0" />
+              <Phone size={20} className="text-primary flex-shrink-0" />
               <div className="text-left">
-                <div className="text-xl font-bold text-white leading-none">
-                  <AnimatedCounter target={60} suffix="s" />
-                </div>
-                <div className="text-xs text-white/50 mt-0.5">Avg response time</div>
+                <div className="text-sm font-semibold text-white leading-tight">Missed call?</div>
+                <div className="text-xs text-white/50 mt-0.5">Auto-text in 60 seconds</div>
               </div>
             </div>
             <div className="flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
-              <Users size={20} className="text-primary flex-shrink-0" />
+              <Wrench size={20} className="text-primary flex-shrink-0" />
               <div className="text-left">
-                <div className="text-xl font-bold text-white leading-none">
-                  <AnimatedCounter target={50} suffix="+" />
-                </div>
-                <div className="text-xs text-white/50 mt-0.5">Businesses served</div>
+                <div className="text-sm font-semibold text-white leading-tight">We build it all</div>
+                <div className="text-xs text-white/50 mt-0.5">You don&apos;t touch the tech</div>
               </div>
             </div>
             <div className="flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
               <DollarSign size={20} className="text-primary flex-shrink-0" />
               <div className="text-left">
-                <div className="text-xl font-bold text-white leading-none">
-                  $<AnimatedCounter target={0} />
-                </div>
-                <div className="text-xs text-white/50 mt-0.5">Setup fee</div>
+                <div className="text-sm font-semibold text-white leading-tight">$0 to start</div>
+                <div className="text-xs text-white/50 mt-0.5">No setup fees, no contracts</div>
               </div>
             </div>
           </div>

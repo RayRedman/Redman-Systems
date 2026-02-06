@@ -34,10 +34,10 @@ export default function Contact() {
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text tracking-tight mb-4">
-            Ready to stop losing leads?
+            Let&apos;s talk about your business.
           </h2>
           <p className="text-lg text-text-secondary max-w-xl mx-auto">
-            Book a free 30-minute call or send us a message. No pressure, no pitch deck — just answers.
+            No pitch, no pressure. Just a conversation about where you&apos;re at and whether this makes sense for you.
           </p>
         </div>
 
@@ -45,10 +45,10 @@ export default function Contact() {
         <div className="bg-dark rounded-2xl p-8 text-center mb-8">
           <Calendar size={32} className="text-primary mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-white mb-2">
-            Book a free strategy call
+            Grab a time that works for you
           </h3>
           <p className="text-white/50 text-sm mb-6 max-w-md mx-auto">
-            We&apos;ll show you exactly where you&apos;re losing revenue — even if you don&apos;t work with us.
+            30 minutes. We&apos;ll walk through how this would work for your specific business.
           </p>
           <a
             href={BOOKING_URL}
@@ -65,7 +65,7 @@ export default function Contact() {
             <>
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-semibold text-text">
-                  Or send us a message
+                  Or just send a message
                 </h3>
                 <a
                   href="mailto:ray@redmansystems.com"
@@ -132,13 +132,13 @@ export default function Contact() {
                     htmlFor="message"
                     className="block text-sm font-medium text-text mb-1.5"
                   >
-                    How can we help?
+                    What do you do and where are you based?
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={3}
-                    placeholder="Tell us about your business..."
+                    placeholder="e.g. I run a plumbing company in Dallas, 3 trucks..."
                     className="w-full px-4 py-3 bg-cream border border-border rounded-lg text-text text-sm placeholder:text-text-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-light transition-all resize-y"
                   />
                 </div>
@@ -187,7 +187,7 @@ export default function Contact() {
             <div className="text-center py-12">
               <CheckCircle size={56} className="text-success mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-text mb-2">
-                Message sent!
+                Got it!
               </h3>
               <p className="text-text-secondary">
                 We&apos;ll get back to you within 24 hours.

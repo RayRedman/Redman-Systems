@@ -36,10 +36,10 @@ export default function WhoItsFor() {
           Built For
         </span>
         <h2 className="font-serif text-2xl sm:text-3xl font-bold text-text mt-3 mb-4 tracking-tight">
-          Home service businesses that want more jobs, not more marketing.
+          If you run trucks and do work at people&apos;s homes, this is for you.
         </h2>
         <p className="text-text-secondary leading-relaxed mb-8">
-          If you run trucks, answer calls, and do work at people&apos;s homes — this is built for you.
+          We work with guys who are great at their trade but don&apos;t have time to mess with marketing software.
         </p>
 
         <div className="flex flex-wrap justify-center gap-2.5">

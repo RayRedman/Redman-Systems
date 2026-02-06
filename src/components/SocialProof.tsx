@@ -1,80 +1,43 @@
-"use client";
+import { Phone, MessageSquare, Star, Calendar } from "lucide-react";
 
-import { useEffect, useRef, useState } from "react";
-
-const metrics = [
-  { value: 60, suffix: "s", label: "Average response time" },
-  { value: 50, suffix: "+", label: "Businesses served" },
-  { value: 3, suffix: "x", label: "More reviews generated" },
-  { value: 40, suffix: "%", label: "Fewer no-shows" },
+const scenarios = [
+  {
+    icon: Phone,
+    before: "Missed call at 2pm",
+    after: "Auto-text sent in 60 seconds",
+  },
+  {
+    icon: MessageSquare,
+    before: "Lead sits overnight",
+    after: "Instant reply, even at midnight",
+  },
+  {
+    icon: Calendar,
+    before: "Customer no-shows",
+    after: "Reminders sent automatically",
+  },
+  {
+    icon: Star,
+    before: "12 Google reviews",
+    after: "Review requests after every job",
+  },
 ];
 
-function Counter({
-  target,
-  suffix,
-  inView,
-}: {
-  target: number;
-  suffix: string;
-  inView: boolean;
-}) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-    const duration = 1500;
-    const steps = 40;
-    const increment = target / steps;
-    let current = 0;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, duration / steps);
-    return () => clearInterval(timer);
-  }, [inView, target]);
-
-  return (
-    <span>
-      {count}
-      {suffix}
-    </span>
-  );
-}
-
 export default function SocialProof() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setInView(true);
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={ref} className="section-dark py-20 lg:py-24">
+    <section className="section-dark py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {metrics.map((m, i) => (
-            <div key={i} className="text-center">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-primary leading-none mb-2">
-                <Counter target={m.value} suffix={m.suffix} inView={inView} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {scenarios.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <div key={i} className="text-center">
+                <Icon size={24} className="text-primary mx-auto mb-3" />
+                <div className="text-sm text-white/40 line-through mb-1">{s.before}</div>
+                <div className="text-sm text-white font-semibold">{s.after}</div>
               </div>
-              <div className="text-sm text-white/50">{m.label}</div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

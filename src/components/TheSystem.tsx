@@ -12,37 +12,37 @@ const features = [
   {
     icon: Phone,
     title: "Missed call text-back",
-    desc: "Every missed call gets an auto-text within 60 seconds. Leads reply instead of calling your competitor.",
+    desc: "You miss a call, they get a text in 60 seconds: \"Hey, sorry I missed you — how can I help?\" Now they're waiting on you, not calling the next guy.",
   },
   {
     icon: Zap,
     title: "Instant lead follow-up",
-    desc: "Form fills get a response in under a minute. Follow-up runs until they book or say stop.",
+    desc: "Website form, Google ad, Facebook — wherever the lead comes from, they hear back in under a minute. Even at 11pm on a Saturday.",
   },
   {
     icon: Bell,
     title: "Appointment reminders",
-    desc: "24-hour and 1-hour text reminders. No-shows drop 40%+. Your schedule stays full.",
+    desc: "Automatic texts go out 24 hours and 1 hour before every job. Customers actually show up. No more driving to an empty house.",
   },
   {
     icon: Star,
-    title: "Review automation",
-    desc: "After every job, customers get a text with your Google link. Reviews stack up on autopilot.",
+    title: "Review requests on autopilot",
+    desc: "After every job, your customer gets a text with your Google review link. Simple ask, easy click. Reviews start stacking up without you remembering to ask.",
   },
   {
     icon: LayoutDashboard,
-    title: "CRM + unified inbox",
-    desc: "Every lead, call, and text in one place. Nothing falls through the cracks.",
+    title: "Everything in one place",
+    desc: "Calls, texts, leads, jobs — one dashboard. Stop bouncing between five apps trying to figure out who you need to call back.",
   },
   {
     icon: Globe,
-    title: "Booking website",
-    desc: "Fast, mobile-first site built to convert visitors into booked jobs. Not a template.",
+    title: "A website that actually books jobs",
+    desc: "Fast, mobile-first, built for your services and your area. Not a cookie-cutter template — built to turn visitors into booked appointments.",
   },
   {
     icon: RefreshCw,
-    title: "Re-engagement campaigns",
-    desc: "Past customers hear from you automatically. One-time jobs turn into repeat revenue.",
+    title: "Past customers come back",
+    desc: "Seasonal reminders, maintenance check-ins, and offers go out to your customer list automatically. That one-time drain job turns into a repeat customer.",
   },
 ];
 
@@ -52,13 +52,13 @@ export default function TheSystem() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-sm font-semibold text-primary uppercase tracking-widest">
-            What We Install
+            What You Get
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text mt-3 mb-4 tracking-tight">
-            A complete revenue system for your business
+            We handle the phones and the follow-up. You handle the jobs.
           </h2>
           <p className="text-lg text-text-secondary">
-            We build it, configure it, and run it. You focus on the work.
+            Everything is set up for your business. You don&apos;t touch any of the tech.
           </p>
         </div>
 
